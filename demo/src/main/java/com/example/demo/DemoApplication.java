@@ -14,7 +14,6 @@ public class DemoApplication {
     }
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-	  String escapedOutput = HtmlUtils.htmlEscape(name);
-      return String.format("Hello %s!", escapedOutput);
+      return String.format("Hello %s!", HtmlUtils.htmlEscape(name));
     }
 }
